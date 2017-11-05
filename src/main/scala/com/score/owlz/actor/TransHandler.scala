@@ -1,7 +1,7 @@
 package com.score.owlz.actor
 
 import akka.actor.{Actor, Props}
-import com.score.owlz.comp.ChainDbCompImpl
+import com.score.owlz.comp.OwlDbCompImpl
 import com.score.owlz.config.AppConf
 import com.score.owlz.util.SenzLogger
 
@@ -11,7 +11,7 @@ object TransHandler {
 
 }
 
-class TransHandler extends Actor with ChainDbCompImpl with AppConf with SenzLogger {
+class TransHandler extends Actor with OwlDbCompImpl with AppConf with SenzLogger {
   val senzActor = context.actorSelection("/user/SenzActor")
 
   override def preStart(): Unit = {
