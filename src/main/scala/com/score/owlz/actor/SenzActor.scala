@@ -169,7 +169,8 @@ class SenzActor extends Actor with AppConf with SenzLogger {
     private def onSenz(msg: String): Unit = {
       val senz = SenzParser.parseSenz(msg)
       senz match {
-        case Senz(SenzType.PUT, _, _, attr, _) =>
+        case Senz(SenzType.PUT, sen, _, attr, _) =>
+
         case Senz(SenzType.DATA, _, _, attr, _) =>
         case Senz(SenzType.SHARE, _, _, attr, _) =>
         case _ =>

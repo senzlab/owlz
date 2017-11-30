@@ -8,11 +8,11 @@ trait OwlDbComp {
   val owlDb: OwlDb
 
   trait OwlDb {
-    def createOwl(owl: Owl): Unit
+    def createOwl(owl: Owl): Owl
 
-    def getOwl()
+    def getOwls(from: String, to: String, date: String, receiver: Boolean): List[Owl]
 
-    def getOwls(from: String, to: String, date: String)
+    def getUsers(from: String, to: String, date: String, receiver: Boolean): List[String]
   }
 
 }
